@@ -1,0 +1,667 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #eef7ff;
+    color: #1e3a5f;
+    line-height: 1.6;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 400px;
+    background-image: url('../imagens/banner-isis.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Menu Interativo */
+nav {
+    text-align: center;
+    padding: 10px;
+    background-color: #1e3a8a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #a0c4ff;
+}
+
+/* Contagem Regressiva */
+#countdown {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #cfe2ff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#countdown h3 {
+    font-size: 1.5rem;
+    color: #1e3a5f;
+}
+
+.card-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.time-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.time-card span {
+    display: block;
+}
+
+.time-card span:first-child {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e3a5f;
+}
+
+.time-card .label {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Responsividade - Mantendo Layout Horizontal do Timer*/
+@media (max-width: 1200px) {
+    .time-card {
+        padding: 15px 10px;
+        min-width: 65px;
+    }
+    .time-card span:first-child {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .time-card {
+        padding: 12px 8px;
+        min-width: 60px;
+    }
+    .time-card span:first-child {
+        font-size: 1.6rem;
+    }
+    .time-card .label {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .time-card {
+        padding: 10px 6px;
+        min-width: 50px;
+    }
+    .time-card span:first-child {
+        font-size: 1.4rem;
+    }
+    .time-card .label {
+        font-size: 0.75rem;
+    }
+    #countdown h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .time-card {
+        padding: 8px 4px;
+        min-width: 40px;
+    }
+    .time-card span:first-child {
+        font-size: 1.2rem;
+    }
+    .time-card .label {
+        font-size: 0.65rem;
+    }
+    #timer {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .time-card {
+        padding: 6px 3px;
+        min-width: 35px;
+    }
+    .time-card span:first-child {
+        font-size: 1rem;
+    }
+    .time-card .label {
+        font-size: 0.6rem;
+    }
+}
+
+/* Borboletas Azuis Animadas */
+.butterfly {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://assets.codepen.io/33787/butterflies.png');
+    background-size: cover;
+    animation: fly 8s infinite ease-in-out, flap 0.75s infinite ease-in-out;
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+    filter: hue-rotate(180deg) saturate(2) brightness(0.9);
+}
+
+.butterfly-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    background-position: 0 0;
+}
+
+.butterfly-2 {
+    top: 20%;
+    left: 80%;
+    animation-delay: 4s;
+    background-position: -40px 0;
+}
+
+.butterfly-3 {
+    top: 50%;
+    left: 30%;
+    animation-delay: 2s;
+    background-position: -80px 0;
+}
+
+.butterfly-4 {
+    top: 70%;
+    left: 60%;
+    animation-delay: 6s;
+    background-position: -120px 0;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50px, -50px) rotate(20deg);
+    }
+    50% {
+        transform: translate(100px, 0) rotate(0deg);
+    }
+    75% {
+        transform: translate(50px, 50px) rotate(-20deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes flap {
+    0%, 20%, 80%, 100% {
+        transform: scaleX(1) rotate(5deg);
+    }
+    50% {
+        transform: scaleX(0.7) rotate(7deg);
+    }
+}
+
+/* Confirmação de Presença */
+#confirmation {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 20px 0;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: url('../imagens/fundo-confirmacao.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Garante que o overlay respeite as bordas arredondadas */
+}
+
+/* Overlay */
+#confirmation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: 10px; /* Bordas arredondadas para o overlay */
+}
+
+/* Conteúdo da seção */
+#confirmation h2, #confirmation p, #confirmation .btn {
+    position: relative;
+    z-index: 2;
+}
+
+#confirmation h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#confirmation p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#confirmation .btn {
+    background-color: #1e40af;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#confirmation .btn:hover {
+    background-color: #0f6923;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos do Carrossel */
+.gallery-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #dbeafe;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(219, 234, 254, 0.9), rgba(191, 219, 254, 0.7));
+    z-index: 0;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, rgba(191, 219, 254, 0.3), rgba(147, 197, 253, 0.2));
+    z-index: 1;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    background-color: transparent !important;
+    filter: drop-shadow(0 4px 12px rgba(30, 58, 138, 0.25));
+    transition: transform 0.4s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.image-bg {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background: linear-gradient(135deg, rgba(191, 219, 254, 0.3), rgba(147, 197, 253, 0.2));
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.carousel-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Controles de Navegação */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(30, 58, 138, 0.8);
+    backdrop-filter: blur(4px);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control:hover {
+    background-color: rgba(30, 58, 138, 0.95);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Indicadores */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+    z-index: 1;
+    position: relative;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    background-color: #bfdbfe;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.dot:hover {
+    background-color: #93c5fd;
+}
+
+.dot.active {
+    background-color: #1e3a8a;
+    transform: scale(1.2);
+    border-color: #dbeafe;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-container {
+        aspect-ratio: 4/3;
+    }
+    
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .image-wrapper img {
+        max-width: 85%;
+        max-height: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        aspect-ratio: 1/1;
+    }
+    
+    .carousel-control {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .carousel-item {
+        padding: 10px;
+    }
+    
+    .image-wrapper img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Sessão do Local */
+#location {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #cfe2ff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#location h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e3a5f;
+}
+
+#location p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #1e3a5f;
+}
+
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    .banner {
+        height: 300px;
+    }
+
+    #timer {
+        font-size: 2rem;
+    }
+
+    #confirmation {
+        min-height: 200px;
+    }
+
+    #confirmation .content {
+        padding: 20px;
+    }
+
+    #confirmation h2 {
+        font-size: 1.5rem;
+    }
+
+    #confirmation p {
+        font-size: 1rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #gallery h2, #location h2 {
+        font-size: 1.5rem;
+    }
+
+    #gallery .btn, #location .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 459px) {
+    .banner {
+        height: 200px;
+    }
+
+    #timer {
+        font-size: 1.5rem;
+    }
+
+    #confirmation {
+        min-height: 150px;
+    }
+
+    #confirmation h2 {
+        font-size: 1.2rem;
+    }
+
+    #confirmation p {
+        font-size: 0.9rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 320px) {
+    .banner {
+        height: 150px;
+    }
+
+    #timer {
+        font-size: 1.2rem;
+    }
+
+    #confirmation {
+        min-height: 100px;
+    }
+
+    #confirmation h2 {
+        font-size: 1rem;
+    }
+
+    #confirmation p {
+        font-size: 0.8rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    iframe {
+        height: 150px;
+    }
+}

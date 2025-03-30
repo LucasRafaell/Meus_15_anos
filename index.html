@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário de 15 anos da Isis</title>
+    <meta name="description" content="Site oficial do aniversário de 15 anos da Isis. Confirme sua presença, veja a lista de presentes e saiba mais sobre o local do evento.">
+    <meta name="keywords" content="aniversário, 15 anos, Isis, confirmação de presença, lista de presentes, local do evento">
+    <meta name="author" content="Seu Nome">
+    <link rel="icon" type="image/png" href="src/imagens/favicon.png">
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
+<body>
+    <!-- Banner -->
+    <header>
+        <div class="banner" role="img" aria-label="Banner do aniversário de 15 anos da Isis"></div>
+    </header>
+
+    <!-- Menu Interativo -->
+    <nav>
+        <ul>
+            <li><a href="#countdown">Contagem Regressiva</a></li>  
+            <li><a href="#confirmation">Confirmação de Presença</a></li>          
+            <li><a href="#gallery">Fotos</a></li>
+            <li><a href="#location">Local do Evento</a></li>            
+        </ul>
+    </nav>
+
+    <!-- Contagem Regressiva -->
+    <section id="countdown">
+        <h2>Contagem Regressiva</h2>
+        <div id="timer" class="card-timer">
+            <div class="time-card">
+                <span id="days">00</span>
+                <span class="label">Dias</span>
+            </div>
+            <div class="time-card">
+                <span id="hours">00</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="time-card">
+                <span id="minutes">00</span>
+                <span class="label">Minutos</span>
+            </div>
+            <div class="time-card">
+                <span id="seconds">00</span>
+                <span class="label">Segundos</span>
+            </div>
+        </div>
+        <h3>Para o evento mais aguardado do ano!</h3>
+
+        <!-- Borboletas -->
+        <div class="butterfly butterfly-1"></div>
+        <div class="butterfly butterfly-2"></div>
+        <div class="butterfly butterfly-3"></div>
+        <div class="butterfly butterfly-4"></div>
+    </section>
+
+    <!-- Confirmação de Presença -->
+    <section id="confirmation">
+        <h2>Confirmação de Presença</h2>
+        <p>Por favor, confirme sua presença no evento:</p>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdD2MHoT8CgbDQQiM4BwUk1bPmBbQC2drCPgglFpf4hj0K6pQ/formResponse" method="POST" target="_blank">
+            <button type="submit" class="btn">Confirmar Presença</button>
+        </form>
+    </section>
+
+<!-- Carrossel de Fotos -->
+<section id="gallery" class="gallery-section">
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem0.jpg" alt="Momento especial 1" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem1.jpg" alt="Momento especial 2" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem2.jpg" alt="Momento especial 3" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem3.jpg" alt="Momento especial 4" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem4.jpg" alt="Momento especial 5" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem5.jpg" alt="Momento especial 6" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem6.jpg" alt="Momento especial 7" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-wrapper">
+                        <img src="src/imagens/imagem7.jpg" alt="Momento especial 8" loading="lazy">
+                        <div class="image-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control prev" aria-label="Anterior">&#10094;</button>
+        <button class="carousel-control next" aria-label="Próximo">&#10095;</button>
+    </div>
+    <div class="carousel-dots"></div>
+</section>
+
+    <!-- Local -->
+    <section id="location">
+        <h2>Local do Evento</h2>
+        <p>Endereço: Av. do Aeroporto, S/N - Bairro Jardim Bahia, Paulo Afonso</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1178.8234485317673!2d-38.23834773038707!3d-9.399861999417299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMjMnNTkuNSJTIDM4wrAxNCcxNS43Ilc!5e1!3m2!1spt-BR!2sbr!4v1738805712542!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <script src="src/js/script.js"></script>
+</body>
+
+</html>
