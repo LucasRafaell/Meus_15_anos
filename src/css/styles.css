@@ -327,6 +327,151 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Seção de Lista de Presentes - Estilo Integrado */
+.gift-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #dbeafe; /* Azul claro consistente com o tema */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(30, 58, 138, 0.1);
+}
+
+.gift-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(219, 234, 254, 0.9), rgba(191, 219, 254, 0.7));
+    z-index: 0;
+}
+
+.gift-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e3a5f;
+    position: relative;
+}
+
+.gift-section p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #1e3a5f;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.gift-section .hint {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #1e3a8a;
+    position: relative;
+}
+
+.gift-btn {
+    background-color: #1e40af;
+    color: white;
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.gift-btn:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Elementos decorativos consistentes com as borboletas existentes */
+.gift-icon {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.2;
+    z-index: 0;
+    animation: float 6s infinite ease-in-out;
+}
+
+.gift-icon:nth-child(1) {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.gift-icon:nth-child(2) {
+    top: 70%;
+    left: 80%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Mantendo toda a responsividade existente */
+@media (max-width: 768px) {
+    .gift-section {
+        padding: 40px 20px;
+    }
+    
+    .gift-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .gift-section p {
+        font-size: 1.1rem;
+    }
+    
+    .gift-btn {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gift-section {
+        padding: 30px 15px;
+    }
+    
+    .gift-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gift-section p {
+        font-size: 1rem;
+    }
+    
+    .gift-btn {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+    
+    .gift-icon {
+        font-size: 1.5rem;
+    }
+}
+
 /* Estilos do Carrossel */
 .gallery-section {
     text-align: center;
