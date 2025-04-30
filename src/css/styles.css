@@ -118,75 +118,6 @@ nav ul li a:hover {
     margin-top: 5px;
 }
 
-/* Responsividade - Mantendo Layout Horizontal do Timer*/
-@media (max-width: 1200px) {
-    .time-card {
-        padding: 15px 10px;
-        min-width: 65px;
-    }
-    .time-card span:first-child {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .time-card {
-        padding: 12px 8px;
-        min-width: 60px;
-    }
-    .time-card span:first-child {
-        font-size: 1.6rem;
-    }
-    .time-card .label {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .time-card {
-        padding: 10px 6px;
-        min-width: 50px;
-    }
-    .time-card span:first-child {
-        font-size: 1.4rem;
-    }
-    .time-card .label {
-        font-size: 0.75rem;
-    }
-    #countdown h3 {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .time-card {
-        padding: 8px 4px;
-        min-width: 40px;
-    }
-    .time-card span:first-child {
-        font-size: 1.2rem;
-    }
-    .time-card .label {
-        font-size: 0.65rem;
-    }
-    #timer {
-        gap: 5px;
-    }
-}
-
-@media (max-width: 400px) {
-    .time-card {
-        padding: 6px 3px;
-        min-width: 35px;
-    }
-    .time-card span:first-child {
-        font-size: 1rem;
-    }
-    .time-card .label {
-        font-size: 0.6rem;
-    }
-}
-
 /* Borboletas Azuis Animadas */
 .butterfly {
     position: absolute;
@@ -261,7 +192,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 60px 20px;
     margin: 20px 0;
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-image: url('../imagens/fundo-confirmacao.jpeg');
     background-size: cover;
@@ -273,10 +204,9 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden; /* Garante que o overlay respeite as bordas arredondadas */
+    overflow: hidden;
 }
 
-/* Overlay */
 #confirmation::before {
     content: '';
     position: absolute;
@@ -286,10 +216,9 @@ nav ul li a:hover {
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
     z-index: 1;
-    border-radius: 10px; /* Bordas arredondadas para o overlay */
+    border-radius: 10px;
 }
 
-/* Conteúdo da seção */
 #confirmation h2, #confirmation p, #confirmation .btn {
     position: relative;
     z-index: 2;
@@ -327,14 +256,14 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Seção de Lista de Presentes - Estilo Integrado */
+/* Lista de Presentes */
 .gift-section {
     text-align: center;
     padding: 60px 20px;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #dbeafe; /* Azul claro consistente com o tema */
+    background-color: #dbeafe;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(30, 58, 138, 0.1);
@@ -394,12 +323,11 @@ nav ul li a:hover {
 }
 
 .gift-btn:hover {
-    background-color: #1e3a8a;
+    background-color: #0f6923;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Elementos decorativos consistentes com as borboletas existentes */
 .gift-icon {
     position: absolute;
     font-size: 2rem;
@@ -429,50 +357,7 @@ nav ul li a:hover {
     }
 }
 
-/* Mantendo toda a responsividade existente */
-@media (max-width: 768px) {
-    .gift-section {
-        padding: 40px 20px;
-    }
-    
-    .gift-section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .gift-section p {
-        font-size: 1.1rem;
-    }
-    
-    .gift-btn {
-        padding: 10px 25px;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .gift-section {
-        padding: 30px 15px;
-    }
-    
-    .gift-section h2 {
-        font-size: 1.5rem;
-    }
-    
-    .gift-section p {
-        font-size: 1rem;
-    }
-    
-    .gift-btn {
-        padding: 8px 20px;
-        font-size: 1rem;
-    }
-    
-    .gift-icon {
-        font-size: 1.5rem;
-    }
-}
-
-/* Estilos do Carrossel */
+/* Galeria Aprimorada */
 .gallery-section {
     text-align: center;
     padding: 40px 20px;
@@ -481,30 +366,23 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: hidden;
 }
 
-.gallery-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(219, 234, 254, 0.9), rgba(191, 219, 254, 0.7));
-    z-index: 0;
+.gallery-subtitle {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
 .carousel-container {
     position: relative;
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 900px;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
     aspect-ratio: 16/9;
-    background: linear-gradient(135deg, rgba(191, 219, 254, 0.3), rgba(147, 197, 253, 0.2));
-    z-index: 1;
+    background-color: #f8fafc;
 }
 
 .carousel {
@@ -525,9 +403,9 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
     padding: 20px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .image-wrapper {
@@ -540,30 +418,40 @@ nav ul li a:hover {
 }
 
 .image-wrapper img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    background-color: transparent !important;
-    filter: drop-shadow(0 4px 12px rgba(30, 58, 138, 0.25));
-    transition: transform 0.4s ease;
-    z-index: 2;
-    position: relative;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: zoom-in;
 }
 
-.image-bg {
+
+
+.image-caption {
     position: absolute;
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 10%;
-    background: linear-gradient(135deg, rgba(191, 219, 254, 0.3), rgba(147, 197, 253, 0.2));
-    border-radius: 8px;
-    z-index: 1;
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background: rgba(30, 58, 138, 0.7);
+    color: white;
+    padding: 8px;
+    font-size: 0.9rem;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+.carousel-item:hover .image-caption {
+    opacity: 1;
 }
 
 .carousel-item:hover img {
-    transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Controles de Navegação */
@@ -601,6 +489,37 @@ nav ul li a:hover {
     right: 20px;
 }
 
+/* Miniaturas */
+.carousel-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 10px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.carousel-thumbnails img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    border: 2px solid transparent;
+}
+
+.carousel-thumbnails img:hover {
+    opacity: 1;
+}
+
+.carousel-thumbnails img.active {
+    opacity: 1;
+    border-color: #1e3a8a;
+}
+
 /* Indicadores */
 .carousel-dots {
     display: flex;
@@ -631,48 +550,58 @@ nav ul li a:hover {
     border-color: #dbeafe;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .carousel-container {
-        aspect-ratio: 4/3;
-    }
-    
-    .carousel-control {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-    
-    .image-wrapper img {
-        max-width: 85%;
-        max-height: 85%;
-    }
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+    animation: fadeIn 0.3s;
 }
 
-@media (max-width: 480px) {
-    .carousel-container {
-        aspect-ratio: 1/1;
-    }
-    
-    .carousel-control {
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-    }
-    
-    .carousel-item {
-        padding: 10px;
-    }
-    
-    .image-wrapper img {
-        max-width: 80%;
-        max-height: 80%;
-    }
-    
-    .dot {
-        width: 12px;
-        height: 12px;
-    }
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-top: 5vh;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #dbeafe;
+}
+
+.modal-caption {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 /* Sessão do Local */
@@ -706,22 +635,285 @@ iframe {
     margin-top: 20px;
 }
 
+/* Rodapé Profissional */
+.site-footer {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 40px 20px 20px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #dbeafe, #dbeafe, #dbeafe);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-brand h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-brand p {
+    color: #a0c4ff;
+    font-size: 0.9rem;
+}
+
+.footer-developer h4,
+.footer-navigation h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer-developer h4::after,
+.footer-navigation h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #dbeafe;
+}
+
+.footer-developer p {
+    margin: 5px 0;
+    color: #dbeafe;
+    font-size: 0.95rem;
+}
+
+.footer-developer strong {
+    color: white;
+    font-weight: 600;
+}
+
+.developer-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.developer-links a {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.developer-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Ajustes específicos para os ícones SVG */
+.developer-links svg {
+    width: 24px;
+    height: 24px;
+    color: white; /* Controla a cor via currentColor */
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.developer-links a:hover svg {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: #dbeafe; /* Cor ao passar o mouse */
+}
+
+.footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-navigation li {
+    margin-bottom: 8px;
+}
+
+.footer-navigation a {
+    color: #dbeafe;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s, padding-left 0.3s;
+    display: inline-block;
+}
+
+.footer-navigation a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+}
+
+.footer-copyright p {
+    color: #a0c4ff;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Responsividade do Rodapé */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .footer-brand,
+    .footer-developer,
+    .footer-navigation {
+        text-align: center;
+    }
+    
+    .footer-developer h4::after,
+    .footer-navigation h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .developer-links {
+        justify-content: center;
+    }
+    
+    .footer-navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-navigation li {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 30px 15px 15px;
+    }
+    
+    .footer-navigation ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
 /* Responsividade */
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
+    .time-card {
+        padding: 15px 10px;
+        min-width: 65px;
+    }
+    .time-card span:first-child {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .time-card {
+        padding: 12px 8px;
+        min-width: 60px;
+    }
+    .time-card span:first-child {
+        font-size: 1.6rem;
+    }
+    .time-card .label {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        aspect-ratio: 4/3;
+    }
+    
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .carousel-thumbnails img {
+        width: 60px;
+        height: 45px;
+    }
+    
+    .image-caption {
+        font-size: 0.8rem;
+    }
+    
+    .time-card {
+        padding: 10px 6px;
+        min-width: 50px;
+    }
+    .time-card span:first-child {
+        font-size: 1.4rem;
+    }
+    .time-card .label {
+        font-size: 0.75rem;
+    }
+    #countdown h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-container {
+        aspect-ratio: 1/1;
+    }
+    
+    .carousel-thumbnails img {
+        width: 50px;
+        height: 35px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 70vh;
+    }
+    
+    .time-card {
+        padding: 8px 4px;
+        min-width: 40px;
+    }
+    .time-card span:first-child {
+        font-size: 1.2rem;
+    }
+    .time-card .label {
+        font-size: 0.65rem;
+    }
+    #timer {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
     .banner {
         height: 300px;
     }
 
-    #timer {
-        font-size: 2rem;
-    }
-
     #confirmation {
         min-height: 200px;
-    }
-
-    #confirmation .content {
-        padding: 20px;
     }
 
     #confirmation h2 {
@@ -741,23 +933,53 @@ iframe {
         font-size: 1.5rem;
     }
 
-    #gallery .btn, #location .btn {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
     iframe {
         height: 300px;
     }
+    
+    .gift-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gift-section p {
+        font-size: 1rem;
+    }
+    
+    .gift-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
 }
 
-@media (max-width: 459px) {
+@media (max-width: 400px) {
+    .banner {
+        height: 250px;
+    }
+    
+    .time-card {
+        padding: 6px 3px;
+        min-width: 35px;
+    }
+    .time-card span:first-child {
+        font-size: 1rem;
+    }
+    .time-card .label {
+        font-size: 0.6rem;
+    }
+    
+    .carousel-thumbnails img {
+        width: 40px;
+        height: 30px;
+    }
+    
+    iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 320px) {
     .banner {
         height: 200px;
-    }
-
-    #timer {
-        font-size: 1.5rem;
     }
 
     #confirmation {
@@ -773,40 +995,23 @@ iframe {
     }
 
     nav ul li a {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     iframe {
         height: 200px;
     }
-}
-
-@media (max-width: 320px) {
-    .banner {
-        height: 150px;
-    }
-
-    #timer {
+    
+    .gift-section h2 {
         font-size: 1.2rem;
     }
-
-    #confirmation {
-        min-height: 100px;
-    }
-
-    #confirmation h2 {
-        font-size: 1rem;
-    }
-
-    #confirmation p {
-        font-size: 0.8rem;
-    }
-
-    nav ul li a {
+    
+    .gift-section p {
         font-size: 0.9rem;
     }
-
-    iframe {
-        height: 150px;
+    
+    .gift-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
     }
 }

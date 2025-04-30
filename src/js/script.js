@@ -38,7 +38,7 @@ window.addEventListener('resize', adjustTimerProportions);
 
 const interval = setInterval(countdown, 1000);
 
-// Carrossel de Fotos - Código Completo
+// Carrossel de Fotos - Código Aprimorado
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos do carrossel
     const carousel = document.querySelector('.carousel-inner');
@@ -55,9 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicialização do carrossel
     function initCarousel() {
         createDots();
+        createThumbnails();
         startAutoScroll();
         setupEventListeners();
         enforceImageTransparency();
+        setupModal();
+        adjustImageSizes();
     }
 
     // Criar indicadores de pontos
@@ -72,10 +75,96 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Criar miniaturas
+    function createThumbnails() {
+        const thumbnailsContainer = document.querySelector('.carousel-thumbnails');
+        if (!thumbnailsContainer) return;
+        
+        thumbnailsContainer.innerHTML = '';
+        items.forEach((item, index) => {
+            const imgSrc = item.querySelector('img').src;
+            const thumbnail = document.createElement('img');
+            thumbnail.src = imgSrc;
+            thumbnail.alt = `Thumbnail ${index + 1}`;
+            thumbnail.dataset.index = index;
+            
+            thumbnail.addEventListener('click', () => {
+                goToItem(index);
+            });
+            
+            thumbnailsContainer.appendChild(thumbnail);
+        });
+    }
+
+    // Configurar modal
+    function setupModal() {
+        const modal = document.getElementById('imageModal');
+        if (!modal) return;
+        
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const closeModal = document.querySelector('.close-modal');
+
+        items.forEach(item => {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const caption = this.querySelector('.image-caption');
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                modalCaption.textContent = caption ? caption.textContent : '';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+
+    // Ajustar tamanho das imagens proporcionalmente
+    function adjustImageSizes() {
+        const carouselHeight = document.querySelector('.carousel-container').offsetHeight;
+        const carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+        
+        items.forEach(item => {
+            const img = item.querySelector('img');
+            if (!img) return;
+            
+            // Esperar a imagem carregar se ainda não tiver dimensões
+            if (img.naturalWidth === 0) {
+                img.addEventListener('load', adjustImageSizes);
+                return;
+            }
+            
+            const imgRatio = img.naturalWidth / img.naturalHeight;
+            const containerRatio = carouselWidth / carouselHeight;
+            
+            if (imgRatio > containerRatio) {
+                // Imagem mais larga que o container
+                img.style.width = '90%';
+                img.style.height = 'auto';
+            } else {
+                // Imagem mais alta que o container
+                img.style.width = 'auto';
+                img.style.height = '80%';
+            }
+            
+            // Centralizar verticalmente se necessário
+            img.style.alignSelf = 'center';
+        });
+    }
+
     // Atualizar a posição do carrossel
     function updateCarousel() {
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
         updateDots();
+        updateThumbnails();
         resetAutoScroll();
     }
 
@@ -84,6 +173,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const dots = document.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    // Atualizar miniaturas ativas
+    function updateThumbnails() {
+        const thumbnails = document.querySelectorAll('.carousel-thumbnails img');
+        if (!thumbnails) return;
+        
+        thumbnails.forEach((thumb, index) => {
+            thumb.classList.toggle('active', index === currentIndex);
         });
     }
 
@@ -158,8 +257,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Eventos de teclado
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') nextItem();
-            if (e.key === 'ArrowLeft') prevItem();
+            const modal = document.getElementById('imageModal');
+            if (modal && modal.style.display === "block") {
+                if (e.key === 'Escape') {
+                    modal.style.display = "none";
+                } else if (e.key === 'ArrowRight') {
+                    nextItem();
+                } else if (e.key === 'ArrowLeft') {
+                    prevItem();
+                }
+            } else {
+                if (e.key === 'ArrowRight') nextItem();
+                if (e.key === 'ArrowLeft') prevItem();
+            }
         });
         
         // Pausar ao interagir
@@ -170,12 +280,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.carousel-item img').forEach(img => {
             if (img.complete) {
                 enforceImageTransparency();
+                adjustImageSizes();
             } else {
                 img.addEventListener('load', enforceImageTransparency);
+                img.addEventListener('load', adjustImageSizes);
             }
         });
     }
 
-    // Inicializar o carrossel
+    // Inicializar o carrossel aprimorado
     initCarousel();
+
+    // Ajustar imagens ao redimensionar
+    window.addEventListener('resize', adjustImageSizes);
 });
+
+// Atualizar ano no rodapé
+document.getElementById('current-year').textContent = new Date().getFullYear();
